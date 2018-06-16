@@ -10,11 +10,14 @@ public class Index extends WebserverHandler {
 
     @Override
     public String[] process(String name, Map<String, String> get, Map<String, String> head, Map<String, String> post_put, Map<String, String> cookies, String clientIp) {
-        if (UserTools.checkLoggedIn(getCookies().get("hosticp_login"))) {
-            return toReturn("");
+        if (UserTools.checkLoggedIn(getCookies().get("hosticp_session"), getCookies().get("hosticp_id"))) {
+            return toReturn(HTML.redirect("/dashboard.html"));
         } else if (post_put.containsKey("mail") && post_put.containsKey("password")) {
-            if (UserTools.login(post_put.get("mail"), post_put.get("password"))) {
-                return toReturn("<meta http-equiv=\"refresh\" content=\"0; url=/dashboard.html\" />");
+            var login = UserTools.login(post_put.get("mail"), post_put.get("password"));
+            if (login != null) {
+                setCookie("hosticp_session", login[0]);
+                setCookie("hosticp_id", login[1]);
+                return toReturn(HTML.redirect("/dashboard.html"));
             } else {
                 return toReturn(loginBox(HostiCP.getLanguage("user.login.wrong")));
             }
