@@ -1,5 +1,6 @@
 package de.codeapp.hosticp.main;
 
+import de.codeapp.hosticp.webhandler.Dashboard;
 import de.codeapp.hosticp.webhandler.Index;
 import de.codeapp.hosticp.webhandler.NotFound;
 import de.lheinrich.lhdf.sql.ClientPostgreSQL;
@@ -39,6 +40,7 @@ public class HostiCP extends ClientPostgreSQL {
     public void registerWebserverHandler() {
         this.webserver.registerHandler("not found", new NotFound());
         this.webserver.registerHandler("", new Index());
+        this.webserver.registerHandler("dashboard.html", new Dashboard());
     }
 
     public static Config getConfig() {
