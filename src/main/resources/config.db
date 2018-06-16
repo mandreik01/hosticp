@@ -1,0 +1,12 @@
+webserver.port=8080
+webserver.portssl=8443
+webserver.threads=4
+webserver.timeout=30
+webserver.maxconnections=0
+webserver.ssl.certificate=certificate.pem
+webserver.ssl.key=key.pem
+postgresql.host=packy.db.elephantsql.com
+postgresql.port=5432
+postgresql.database=gyxgbfgl
+postgresql.username=gyxgbfgl
+postgresql.password=o0aJu6dAxrchCHidp9fc3relPKnjfopl

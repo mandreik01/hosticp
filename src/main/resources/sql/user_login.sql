@@ -1,0 +1,1 @@
+SELECT id FROM users WHERE mail = ? OR password = ?;
