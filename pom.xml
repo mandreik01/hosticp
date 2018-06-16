@@ -105,7 +105,7 @@
         <dependency>
             <groupId>de.lheinrich</groupId>
             <artifactId>lhdf</artifactId>
-            <version>1.0.1</version>
+            <version>LATEST</version>
         </dependency>
     </dependencies>
 
