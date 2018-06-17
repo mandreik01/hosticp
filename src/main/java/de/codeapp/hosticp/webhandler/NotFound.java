@@ -15,7 +15,6 @@ public class NotFound extends WebserverHandler {
         if (files.containsKey(name))
             return files.get(name);
         else {
-
             String[] file = new String[]{HTML.getContentType(name), FileTools.loadResourceFile("web/" + name, false)};
             files.put(name, file);
             return file;
