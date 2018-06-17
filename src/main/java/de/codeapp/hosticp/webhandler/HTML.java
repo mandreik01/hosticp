@@ -13,7 +13,7 @@ public class HTML {
         contentTypes = new HashMap<>();
         contentTypes.put("html", "text/html");
         contentTypes.put("css", "text/css");
-        contentTypes.put("js", "application/javascript");
+        contentTypes.put("dashboard", "application/javascript");
     }
 
     public static String getContentType(String name) {
